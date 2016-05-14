@@ -11,6 +11,9 @@
 |
 */
 
+Route::get('/', ['uses' => 'IndexController@index']);
+
+
 Route::get('digit/{num}/{func}/{secNum}', function ($num,$func, $secNum) {
 	switch ($func) {
 		case '+':
@@ -41,7 +44,8 @@ Route::get('curCalc/{cur}/{val}/{newCur}/{inverse}', ['uses' => 'CurCalculateCon
 	->where('cur','[A-Z]+')
 	->where('val','[0-9]+')
 	->where('newCur','[A-Z]+')
-	->where('inverse','[0-1]{1}');
+	->where('inverse','[0-1]{1}')
+;
 
 Route::get('curCalc/help', ['uses' => 'CurCalculateController@help']);
 
