@@ -11,8 +11,9 @@
 |
 */
 
-Route::get('/', ['uses' => 'IndexController@index']);
+//Route::get('/', ['uses' => 'IndexController@index']);
 
+Route::get('/', ['uses' =>'CityController@city']);
 
 Route::get('digit/{num}/{func}/{secNum}', function ($num,$func, $secNum) {
 	switch ($func) {
@@ -48,4 +49,6 @@ Route::get('curCalc/{cur}/{val}/{newCur}/{inverse}', ['uses' => 'CurCalculateCon
 ;
 
 Route::get('curCalc/help', ['uses' => 'CurCalculateController@help']);
+
+
 
